@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      WebVR — AC Meeting 2017
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href=
+    "https://www.w3.org/2014/shower/shower/themes/ribbon/styles/screen.css">
+    <link rel="stylesheet" href=
+    "https://www.w3.org/2014/shower/shower/themes/w3c/styles/styles_w3c.css">
+    <style>
+      #Cover h2, #Cover2 h2 {
+      top: 24px;
+      color: #fff;
+      font-size: 42px; /* Edit this to change the cover text size */
+      margin: 0;
+      position: absolute;
+      }
+      #Cover img, #Cover2 img {
+      height: 640px;
+      width: 1024px;
+      }
+      .slide:after {
+      top: 22px;
+      right: 109px;
+      width: 70px;
+      height: 136px;
+      background: url(//www.w3.org/2017/Talks/ac-slides/shower_ac2017/pictures/logo.png) no-repeat;
+      background-size: 70px 68px;
+      padding: 60px 0 0;
+      color:  #EB423C;
+      }
+      .full .progress div {
+      border-bottom-color: #EB423C;
+      }
+      .slide.shout h2 {
+      font-size: 108px;
+      }
+    </style>
+  </head>
+  <body class="list">
+    <header class="caption">
+      <h1>
+        WebVR
+      </h1>
+      <p>
+        W3C AC Meeting 2017
+      </p>
+    </header>
+    <section class="slide cover" id="Cover">
+      <div>
+        <h2 style="left:24px;">
+          [draft] WebVR
+        </h2>
+        <h2 style="right:24px;">
+          Anssi Kostiainen<br>
+          <span style="font-size: 75%">Intel Corporation</span>
+        </h2><img src="pictures/AC_Slides_2017_temp-cover.jpg" alt=
+        "AC 2017 logo with fancy background.">
+      </div>
+    </section>
+    <section class="slide">
+      <div style=
+      "background: url('pictures/webvr-logo.png') no-repeat bottom right;">
+        <h2>
+          Objective of this presentation
+        </h2>
+        <ul>
+          <li>Understand:
+            <ol>
+              <li>Where are we at with VR?
+              </li>
+              <li>What is WebVR?
+              </li>
+              <li>Current status
+              </li>
+              <li>Next steps
+              </li>
+            </ol>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Where are we at with VR?
+        </h2>
+        <figure class="next">
+          <blockquote>
+            <p>
+              Is 2016 The Year of Virtual Reality? [...] <strong>Content is
+              critical</strong> for VR
+            </p>
+          </blockquote>
+          <figcaption>
+            <a href=
+            "http://fortune.com/2015/12/04/2016-the-year-of-virtual-reality/">Fortune
+            (Dec 2015)</a>
+          </figcaption>
+        </figure>
+        <figure class="next">
+          <blockquote>
+            <p>
+              Virtual Reality is about to go mainstream, but a <strong>lack of
+              content</strong> threatens to hold it back
+            </p>
+          </blockquote>
+          <figcaption>
+            <a href=
+            "https://techcrunch.com/2016/04/03/virtual-reality-is-about-to-go-mainstream-but-a-lack-of-content-threatens-to-hold-it-back/">
+            TechCrunch (Apr 2016)</a>
+          </figcaption>
+        </figure>
+        <figure class="next">
+          <blockquote>
+            <p>
+              Why 2016 Was Not The Year of Virtual Reality
+            </p>
+          </blockquote>
+          <figcaption>
+            <a href=
+            "https://www.forbes.com/sites/kalevleetaru/2017/01/09/why-2016-was-not-the-year-of-virtual-reality/">
+            Forbes (Jan 2017)</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Where are we at with VR?
+        </h2>
+        <figure>
+          <blockquote>
+            <p>
+              In short, <strong>without available content</strong> your VR
+              headset is not very useful
+            </p>
+          </blockquote>
+          <figcaption>
+            <a href=
+            "https://www.forbes.com/sites/kalevleetaru/2017/01/09/why-2016-was-not-the-year-of-virtual-reality/">
+            Forbes (Jan 2017)</a>
+          </figcaption>
+        </figure>
+        <h2 class="next">
+          How to easily create &amp; distribute content to diverse VR devices
+          in a large scale manner?
+        </h2>
+        <div style="display: flex; align-items: center;">
+          <div class="next" style="flex: 1;">
+            <img src="pictures/cardboard.jpg" style="height: 100px;" alt=
+            "Google Cardboard.">
+            <p>
+              <a href=
+              "http://www.theverge.com/2017/2/28/14767902/google-cardboard-10-million-shipped-vr-ar-apps">
+              &gt;10M shipped</a>
+            </p>
+          </div>
+          <div class="next" style="flex: 1;">
+            <img src="pictures/gear-vr.png" style="height: 100px;" alt=
+            "Samsung Gear VR.">
+            <p>
+              <a href=
+              "http://www.wired.co.uk/article/samsung-vr-outships-psvr-htc-vive-and-oculus">
+              ~5M shipped</a>
+            </p>
+          </div>
+          <div class="next" style="flex: 1;">
+            <img src="pictures/vive.png" style="height: 100px;" alt=
+            "HTC Vive.">
+            <p>
+              <a href=
+              "http://www.wired.co.uk/article/samsung-vr-outships-psvr-htc-vive-and-oculus">
+              ~420K shipped</a>
+            </p>
+          </div>
+          <div class="next" style="flex: 1;">
+            <img src="pictures/rift.jpg" style="height: 100px;" alt=
+            "Oculus Rift.">
+            <p>
+              <a href=
+              "http://www.wired.co.uk/article/samsung-vr-outships-psvr-htc-vive-and-oculus">
+              ~250K shipped</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          Solution?
+        </h2>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          1. Progressive<br>
+          enhancement
+        </h2>
+      </div>
+    </section>
+    <section class="slide cover">
+      <video autoplay="" muted="" loop="" style=
+      "width: 100%; margin-top: 3%;"><source src=
+      "video/progressiveEnhancement.mp4" type="video/mp4"> Your browser does
+      not support HTML5 video.</video>
+    </section>
+    <section class="slide cover">
+      <div>
+        <img src="pictures/pe-pyramid.png" alt=
+        "Progressive enhancement pyramid." style=
+        "height: 80%; margin-top: 5%;">
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          2. Ease of authoring
+        </h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          WebVR Authoring Story
+        </h2>
+        <ol>
+          <li>
+            <strong>Low-level APIs</strong> standardized first
+            <ul>
+              <li>WebVR API: interface with VR devices
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>High-level APIs</strong> provided by JS libraries, e.g.:
+            <ul>
+              <li>Three.js: simpler WebGL
+              </li>
+              <li>A-Frame: declarative HTML markup
+              </li>
+              <li>Standardize only after JS experimentation
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <blockquote>
+          <p>
+            Inspired by the <a href=
+            "https://extensiblewebmanifesto.org/">Extensible Web Manifesto</a>
+          </p>
+        </blockquote>
+        <div style=
+        "border-radius: 50%; display: inline-block; width: 400px; height: 400px; background: gray; position: absolute; bottom: 0; right: 0;">
+        <div style=
+        "border-radius: 50%; display: inline-block; width: 300px; height: 300px; background: lightgray; position: absolute; top: 0; right: 50px;">
+          <div style=
+          "border-radius: 50%; display: inline-block; width: 150px; height: 150px; background: #f0f0f0; position: absolute; top: 0; right: 75px; display: block; border: 3px solid #fff;">
+            <div class="next" style=
+            "text-align: center; margin-top: 50px; margin-right: 0%;">
+                WebVR API
+              </div>
+              <div class="next" style=
+              "text-align: center; margin-top: 90px; margin-right: 0%;">
+                Three.js
+              </div>
+              <div class="next" style=
+              "text-align: center; margin-top: 80px; margin-right: 0%;">
+                A-Frame
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div style=
+      "background: url('pictures/www-proposal.gif') no-repeat top right;">
+        <h2 class="next" style=
+        "background: #fff; background: rgba(255,255,255,0.8);">
+          3. The Web architecture good for large scale content delivery
+        </h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          What is WebVR?
+        </h2>
+        <ol>
+          <li>
+            <strong>Strictly</strong>, an API to access input and output
+            capabilities of VR hardware
+            <ul>
+              <li>
+                <a href="https://w3c.github.io/webvr/">WebVR API spec</a>
+                incubated in the <a href=
+                "https://www.w3.org/community/webvr/">W3C WebVR Community
+                Group</a>
+              </li>
+              <li>
+                <a href="https://webvr.rocks/#browsers">WebVR API early
+                implementations</a> in multiple browsers:<br>
+                <img class="next" src="pictures/chromium_256x256.png" style=
+                "width: 64px;" alt="Chromium logo."> <img class="next" src=
+                "pictures/firefox-nightly_256x256.png" style="width: 64px;"
+                alt="Firefox Nightly logo."> <img class="next" src=
+                "pictures/samsung-internet_256x256.png" style="width: 64px;"
+                alt="Samsung Internet logo."> <img class="next" src=
+                "pictures/edge_256x256.png" style="width: 64px;" alt=
+                "Edge logo."> <img class="next" src=
+                "pictures/chrome-for-android_256x256.png" style="width: 64px;"
+                alt="Firefox Nightly logo."> <img class="next" src=
+                "pictures/servo_256x256.png" style="width: 64px;" alt=
+                "Servo logo."> <img class="next" src=
+                "pictures/oculus-carmel.png" style="width: 64px;" alt=
+                "Oculus Carmel logo.">
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Broadly</strong>, a catch-all term for various features
+            that enable VR on the Web
+            <ul>
+              <li class="next">
+                <span>WebVR API,</span> <span class="next">Gamepad API,</span>
+                <span class="next">WebGL API,</span> <span class="next">Web
+                Audio API,</span> <span class="next">etc.</span>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          Use cases?
+        </h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Excite with the next level experiences
+        </h2>
+        <ul>
+          <li>
+            <strong>Progressively enhance existing web content</strong>
+            <ul>
+              <li>
+                <a href="https://sketchfab.com/" target="_blank">3D models of
+                everything</a>, <a href="http://graphics.wsj.com/3d-nasdaq/"
+                target="_blank">data visualization</a>, <a href=
+                "https://vr.google.com/earth/" target="_blank">mapping</a>,
+                <a href="https://matterport.com/try-it/" target=
+                "_blank">shopping</a>
+              </li>
+              <li>E.g. preview a hotel room, airline seat, restaurant table
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>New video experiences</strong>
+            <ul>
+              <li>360&deg; and 3D video, 2D video for theater-like experience
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Artistic experiences</strong>
+            <ul>
+              <li>Endless possibilities of a new medium for artistic expression
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Games</strong> (but not just games!)
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div class="sketchfab-embed-wrapper" style="text-align: center">
+        <iframe width="640" height="480" src=
+        "https://sketchfab.com/models/10508b015eba45f99554578a3fb4c02c/embed"
+        frameborder="0" allowvr="" allowfullscreen="" mozallowfullscreen="true"
+        webkitallowfullscreen="true" onmousewheel=""></iframe>
+      </div>
+    </section>
+    <section class="slide">
+      <div style="text-align: center">
+        <iframe width="640" height="480" src=
+        "https://my.matterport.com/show/?m=uRGXgoiYk9f&amp;play=0&amp;qs=1"
+        frameborder="0" allowfullscreen=""></iframe>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          Excited yet?
+        </h2>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          WebVR&nbsp;API<br>
+          current&nbsp;status &amp;<br>
+          next steps
+        </h2>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          WebVR API Goals
+        </h2>
+        <ul>
+          <li>Enable Virtual Reality applications on the Web to:
+            <ul>
+              <li>
+                <strong>Detect</strong> available Virtual Reality devices
+              </li>
+              <li>
+                <strong>Query</strong> the devices capabilities
+              </li>
+              <li>
+                <strong>Poll</strong> the device’s position and orientation
+              </li>
+              <li>
+                <strong>Display</strong> imagery on the device at the
+                appropriate frame rate
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span style="color: red;">Non-goals</span>:
+            <ul>
+              <li>Define how a Virtual Reality browser would work
+              </li>
+              <li>Take full advantage of Augmented Reality devices
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div style=
+      "background: url('pictures/funnel.png') no-repeat 400px 160px; background-size: 640px;">
+      <h2>
+          WebVR Standards Funnel
+        </h2><!--img src="pictures/funnel.png" alt="Funnel." style=
+        "float: right; width: 50%; opacity: 0.7;"-->
+        <table style=
+        "width: 75%; background: #fff; background: rgba(255,255,255,0.8);">
+          <tr>
+            <th scope="row">
+              Dec 2015
+            </th>
+            <td>
+              <a href=
+              "https://www.w3.org/wiki/Headlights2016#Web_and_Virtual_Reality">W3C
+              Headlight Project</a> identified
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Mar 2016
+            </th>
+            <td>
+              <a href="https://www.w3.org/community/webvr/">W3C Community
+              Group</a> created
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Oct 2016
+            </th>
+            <td>
+              <a href="https://www.w3.org/2016/06/vr-workshop/report.html">W3C
+              Workshop</a> organized
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Feb 2017
+            </th>
+            <td>
+              <a href=
+              "https://w3c.github.io/webvr-charter/vr-wg-charter.html">W3C
+              Working Group Charter</a> drafted
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Mar 2017
+            </th>
+            <td>
+              <a href=
+              "https://lists.w3.org/Archives/Member/w3c-ac-members/2017JanMar/0045.html">
+              W3C Working Group Advance Notice</a> sent
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Next up
+            </th>
+            <td>
+              W3C Working Group created?
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Web and Virtual Reality W3C Headlight
+        </h2>
+        <figure>
+          <blockquote>
+            <p>
+              As Virtual Reality product and solutions are gaining momentum, we
+              should make sure we <strong>understand if and how the Web can
+              play a role in this space</strong>, and chart the standardization
+              needs that emerge from it.
+            </p>
+          </blockquote>
+          <figcaption>
+            <a href="https://www.w3.org/2016/03/w3c-highlights/#headlights">W3C
+            Highlights report</a> prepared for the <a href=
+            "https://www.w3.org/Member/Meeting/2016ac/March/">W3C AC Meeting
+            2016</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          W3C WebVR Community Group
+        </h2><img alt="Community Group story." src="pictures/cg-story.svg"
+        style="display: block; float:right; height: 60%;">
+        <ul>
+          <li>
+            <a href="https://www.w3.org/community/webvr/">Community Group</a>
+            created in March 2016
+          </li>
+          <li>
+            <a href="https://www.w3.org/community/webvr/participants" target=
+            "_blank">~140 participants</a>: Mozilla, Google, Microsoft, Intel,
+            Samsung, Facebook, more &hellip;
+          </li>
+          <li>
+            <a href="https://w3c.github.io/webvr/">WebVR API</a> spec progress:
+            <ol>
+              <li>March 2017 - <a href="https://w3c.github.io/webvr/spec/1.1/">
+                pre-release "v1.1"</a>
+              </li>
+              <li>Work in progress - <a href=
+              "https://w3c.github.io/webvr/spec/latest/">Editor's Draft
+              "v2.0"</a>
+              </li>
+            </ol>
+          </li>
+          <li>WebVR API actively developed in <a href=
+          "https://github.com/w3c/webvr/">GitHub</a>:
+            <ul>
+              <li>~140 closed and ~70 open issues, ~20 active contributors
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div style=
+      "padding-left: 300px; width: 640px; background: url('pictures/ws-banner.jpg') no-repeat bottom left; background-size: 250px;">
+      <h2>
+          W3C Workshop
+        </h2>
+        <ul>
+          <li>Broad set of <a href=
+          "https://www.w3.org/2016/06/vr-workshop/schedule.html">topics</a>,
+          see <a href=
+          "https://www.w3.org/2016/06/vr-workshop/report.html">report</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/2016/06/vr-workshop/participants.html"
+            target="_blank">120 participants</a> across the Web and VR
+            industry:
+            <ul>
+              <li>
+                <strong>Browser vendors</strong>: Google, Mozilla, Microsoft,
+                Apple
+              </li>
+              <li>
+                <strong>VR vendors</strong>: Valve, Oculus, Sony, Unity
+              </li>
+              <li>
+                <strong>VR hardware</strong>: Samsung, Intel, NVIDIA, Qualcomm,
+                Mediatek, Oculus
+              </li>
+              <li>
+                <strong>&gt;30 VR startups</strong>: Matterport, Sketchfab,
+                Vizor.io ...
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          W3C Workshop Topics
+        </h2>
+        <div style="display: flex; align-items: center;">
+          <div style="flex: 1;">
+            <ul>
+              <li>WebVR intro
+              </li>
+              <li>VR user interactions in browsers
+              </li>
+              <li>Accessibility of VR experiences
+              </li>
+              <li>Multi-user VR experiences
+              </li>
+              <li>Authoring VR experiences on the Web
+              </li>
+            </ul>
+          </div>
+          <div style="flex: 1;">
+            <ul>
+              <li>High-performance VR on the Web
+              </li>
+              <li>360&deg; video on the Web
+              </li>
+              <li>Immersive audio
+              </li>
+              <li>Breakout sessions
+              </li>
+              <li>Demos
+              </li>
+              <li>VR standardization landscape
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Workshop Summary
+        </h2>
+        <figure>
+          <blockquote>
+            <p>
+              [Workshop participants] recognized the <strong>strong prospects
+              already opened by existing and in-development Web APIs</strong>,
+              in particular the <strong>WebVR API</strong> that was highlighted
+              as an <strong>important target for near-term
+              standardization</strong>, as well as the <strong>high
+              priority</strong> of making the Web a primary platform for
+              <strong>distributing 360&deg; videos</strong>. They also
+              identified <strong>new opportunities</strong> that would be
+              brought by enabling traditional <strong>Web pages to be
+              enhanceable as immersive spaces</strong>, and in the
+              <strong>longer term</strong>, by making <strong>3D content a
+              basic brick</strong> available to Web developers and content
+              aggregators.
+            </p>
+          </blockquote>
+          <figcaption>
+            <a href="https://www.w3.org/2016/06/vr-workshop/report.html">W3C
+            Workshop on Web &amp; Virtual Reality report</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          W3C Working Group Charter [draft]
+        </h2><iframe src=
+        "https://w3c.github.io/webvr-charter/vr-wg-charter.html" style=
+        "width: 100%; height: 100%; box-shadow: 4px 4px 40px 2px #000;"></iframe>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          W3C Working Group Charter [draft]
+        </h2>
+        <ol>
+          <li>Strictly scoped, one normative specification:
+            <ul>
+              <li>WebVR API (adopted from the WebVR Community Group)
+              </li>
+            </ul>
+          </li>
+          <li>Aggressive timeline:
+            <ul>
+              <li>~6 months from FPWD to CR
+              </li>
+            </ul>
+          </li>
+          <li>Coordination:
+            <ul>
+              <li>Device and Sensors WG, WebAppSec WG, Web Platform WG
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2>
+          Wrap-up
+        </h2>
+      </div>
+    </section>
+    <section class="slide shout">
+      <div>
+        <h2 style="background: #fff; background: rgba(255,255,255,0.8);">
+          Web<span class="next">VR</span> for All<br>
+          Web<span class="next">VR</span> on Everything<span class=
+          "next">?</span>
+        </h2>
+        <p>
+          <a href="https://www.w3.org/Consortium/mission">W3C Mission</a>:
+        </p>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          WebVR for All
+        </h2>
+        <ol>
+          <li>Democratize "long tail" VR content creation
+          </li>
+          <li>Scale from low-end to high-end VR devices
+          </li>
+          <li>Enable frictionless VR content discovery: "search and click a
+          link"
+          </li>
+        </ol>
+        <h2>
+          WebVR on Everything
+        </h2>
+        <ol>
+          <li>Target widest range of VR devices &amp; platforms
+          </li>
+          <li>Progressive enhancement built-in
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Next Steps
+        </h2>
+        <ol>
+          <li>Advance toward a WebVR Working Group
+          </li>
+          <li>
+            <strong>Call for action</strong>: please review the <a href=
+            "https://w3c.github.io/webvr-charter/vr-wg-charter.html">WebVR
+            Working Group Charter [draft]</a>
+            <ul>
+              <li>Is the scope too tight?
+              </li>
+              <li>Is the timeline too opportunistic?
+              </li>
+              <li>Ready to start the transition soon?
+              </li>
+            </ul>
+          </li>
+          <li>Send your feedback to: <a href=
+          "https://lists.w3.org/Archives/Member/w3c-ac-members/2017JanMar/0045.html">
+            w3c-ac-members@w3.org</a>, <a href=
+            "https://lists.w3.org/Archives/Member/chairs/2017JanMar/0137.html">chairs@w3.org</a>,
+            or <a href="https://github.com/w3c/webvr-charter/issues">open an
+            issue</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="slide cover" id="Cover2">
+      <h2 style="left:24px;">
+        Thank you for listening
+      </h2>
+      <div>
+        <img src="pictures/AC_Slides_2017_temp-cover.jpg" alt=
+        "AC 2017 logo with fancy background.">
+      </div>
+    </section>
+    <section class="slide">
+      <div>
+        <h2>
+          Credits
+        </h2>
+        <p>
+          <a href=
+          "https://unboring.net/workflows/progressive-enhancement/">Progressive
+          enhancement pyramid and interactions video</a> by Arturo Paracuellos,
+          <a href="http://info.cern.ch/Proposal.html">Tim Berners-Lee's
+          proposal</a> (Copyright CERN 2008), <a href=
+          "https://commons.wikimedia.org/wiki/File:Google-Cardboard.jpg">Google
+          Cardboard</a> (CC0 Public Domain), <a href=
+          "https://sv.wikipedia.org/wiki/Samsung_Gear_VR#/media/File:Samsung_Gear_VR_V1.png">
+          Gear VR</a> (<a href=
+          "http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>),
+          <a href=
+          "https://en.wikipedia.org/wiki/Oculus_Rift#/media/File:Oculus_Consumer_Version_1.jpg">
+          Oculus Rift</a> (<a href=
+          "http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>)
+          <a href="https://github.com/alrra/browser-logos/">Browser logos</a>
+          (All browser logos and trademarks are the property of their
+          respective owners.)
+        </p>
+        <p>
+          TODO: Check appropriate credits given to all media assets.
+        </p>
+      </div>
+    </section><!--
+                To hide progress bar from entire presentation
+                just remove “progress” element.
+                -->
+    <div class="progress">
+      <div></div>
+    </div>
+    <script src="https://www.w3.org/2014/shower/shower/shower.min.js">
+    </script> 
+    <!-- Shower Presentation Engine available here: http://shwr.me -->
+  </body>
+</html>
