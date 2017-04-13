@@ -1,0 +1,31 @@
+/* fonts.css is a fix for cross-domain fonts while hosted outside w3.org. */
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url(../fonts/PTSans.woff) format('woff')
+}
+@font-face {
+    font-weight: 700;
+    font-family: 'PT Sans';
+    src: url(../fonts/PTSans.Bold.woff) format('woff')
+}
+@font-face {
+    font-style: italic;
+    font-family: 'PT Sans';
+    src: url(../fonts/PTSans.Italic.woff) format('woff')
+}
+@font-face {
+    font-style: italic;
+    font-weight: 700;
+    font-family: 'PT Sans';
+    src: url(../fonts/PTSans.Bold.Italic.woff) format('woff')
+}
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-weight: 700;
+    src: url(../fonts/PTSans.Narrow.Bold.woff) format('woff')
+}
+@font-face {
+    font-family: 'PT Mono';
+    src: url(../fonts/PTMono.woff) format('woff')
+}
